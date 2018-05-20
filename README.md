@@ -7,9 +7,8 @@
 1. High test coverage - ver 80% (according to IntelliJ IDEA)
 1. self-runnable jar
 
-## How to build
+## How to build and run
 
-You can run application multiple ways:
-1. Build it and run via **gradle**: 
-`gradle jar`
-1. Dun via JAR file: ``
+Build jar file via **gradlew** script and and run it: 
+1. `./gradlew clean fatjar`
+2. run jar File: `java -jar ./build/libs/playground-1.0-capsule.jar`

@@ -1,10 +1,11 @@
 plugins {
     id 'java'
     id 'net.ltgt.apt' version '0.10'
+    id "us.kirchmeier.capsule" version "1.0.2"
 }
 
 group 'revo'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -29,8 +30,12 @@ dependencies {
     apt "org.projectlombok:lombok:1.16.20"
 }
 
+task fatjar(type: FatCapsule) {
+    applicationClass 'playground.test.revo.Application'
+}
+
 jar {
     manifest {
         attributes 'Main-Class': 'playground.test.revo.Application'
     }
-}
+}   exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
